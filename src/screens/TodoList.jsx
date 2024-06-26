@@ -16,7 +16,10 @@ function TodoList() {
     const fetchTodos = async () => {
       try {
         const user = await Auth.currentAuthenticatedUser();
-        const result = await API.graphql(graphqlOperation(listTodos));
+        const result = await API.graphql({
+          ...graphqlOperation(listTodos, { input: item }),
+        authMode: "AMAZON_COGNITO_USER_POOLS",
+        });
         console.log("Result of todo>", result)
         setTodos(result.data.listTodos.items);
       } catch (error) {
@@ -36,7 +39,11 @@ function TodoList() {
       if (editIndex !== null) {
         const todo = { ...todos[editIndex], name: item };
         console.log("Todo To be updated>>",todo)
-        const updatedVlue = await API.graphql(graphqlOperation(updateTodo, { input: { id: todo.id } }));
+        const updatedVlue = await API.graphql({
+          ...graphqlOperation(updateTodo,{ input: { id: todo.id, name: item }}),
+          authMode:  "AMAZON_COGNITO_USER_POOLS"
+        });
+        // const updatedVlue = await API.graphql(graphqlOperation(updateTodo, { input: { id: todo.id } }));
         console.log("Updated Value>>>>",updatedVlue)
         const updatedTodos = [...todos];
         updatedTodos[editIndex] = todo;
@@ -46,7 +53,10 @@ function TodoList() {
         // Add item
         const todo = { name: item };
         console.log("Addition of todo Value>> ",todo)
-        const result = await API.graphql(graphqlOperation(createTodo, { input: todo }));
+        const result = await API.graphql({
+          ...graphqlOperation(createTodo, { input: todo }),
+          authMode:  "AMAZON_COGNITO_USER_POOLS"
+        });
         setTodos([...todos, result.data.createTodo]);
       }
       setItem("");
@@ -61,7 +71,11 @@ function TodoList() {
       const todo = todos[index];
 
       console.log("Node to be deleted", todo)
-      await API.graphql(graphqlOperation(deleteTodo, { input: { id: todo.id } }));
+      const result = await API.graphql({
+        ...graphqlOperation(deleteTodo, { input: { id: todo.id } }),
+        authMode:  "AMAZON_COGNITO_USER_POOLS"
+      });
+      // await API.graphql(graphqlOperation(deleteTodo, { input: { id: todo.id } }));
       const filteredTodos = todos.filter((_, i) => i !== index);
       setTodos(filteredTodos);
     } catch (error) {

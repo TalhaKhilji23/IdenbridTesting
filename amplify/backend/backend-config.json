@@ -18,7 +18,7 @@
     }
   },
   "auth": {
-    "awsnewamplify4b37d9ca": {
+    "awsnewamplifyc2bfd0ce": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {

@@ -36,6 +36,7 @@ const [email, setEmail] = useState("");
 
     try {
       const response = await Auth.forgotPassword(email);
+      console.log("Response We have>>",response)
       // On successful signup, navigate to confirm signup
       if(response){
         navigate('/resetpassword');

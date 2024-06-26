@@ -12,11 +12,11 @@
       "AmplifyAppId": "d2r9hl74y55xgx"
     },
     "categories": {
-      "auth": {
-        "awsnewamplify4b37d9ca": {}
-      },
       "api": {
         "awsnewamplify": {}
+      },
+      "auth": {
+        "awsnewamplifyc2bfd0ce": {}
       }
     }
   }

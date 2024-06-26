@@ -10,6 +10,14 @@
       "StackName": "amplify-awsnewamplify-dev-3ba0b",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:812096089383:stack/amplify-awsnewamplify-dev-3ba0b/8768f0d0-3370-11ef-8830-06e695c8199b",
       "AmplifyAppId": "d2r9hl74y55xgx"
+    },
+    "categories": {
+      "auth": {
+        "awsnewamplify4b37d9ca": {}
+      },
+      "api": {
+        "awsnewamplify": {}
+      }
     }
   }
 }

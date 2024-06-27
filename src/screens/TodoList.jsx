@@ -3,7 +3,8 @@ import { BsTrash3, BsPencil, BsWindowPlus } from "react-icons/bs"; // Import the
 import { Auth, API, graphqlOperation } from "aws-amplify";
 import { useNavigate } from 'react-router-dom';
 
-import { createTodo, updateTodo, deleteTodo } from '../graphql/mutations';
+import { createTodo, updateTodo, deleteTodo ,changeNameOfTodo} from '../graphql/mutations';
+
 import { listTodos } from '../graphql/queries';
 
 function TodoList() {
@@ -39,10 +40,7 @@ function TodoList() {
       if (editIndex !== null) {
         const todo = { ...todos[editIndex], name: item };
         console.log("Todo To be updated>>",todo)
-        const updatedVlue = await API.graphql({
-          ...graphqlOperation(updateTodo,{ input: { id: todo.id, name: item }}),
-          authMode:  "AMAZON_COGNITO_USER_POOLS"
-        });
+        const updatedVlue = await API.graphql(graphqlOperation(changeNameOfTodo,{ id: todo.id, name: todo.name }),);
         // const updatedVlue = await API.graphql(graphqlOperation(updateTodo, { input: { id: todo.id } }));
         console.log("Updated Value>>>>",updatedVlue)
         const updatedTodos = [...todos];

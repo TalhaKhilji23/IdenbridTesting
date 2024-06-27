@@ -39,6 +39,9 @@ const [email, setEmail] = useState("");
         username: email,
         password: pass,
       });
+
+
+      console.log("response>>",response)
       // On successful signup, navigate to confirm signup
       if(response){
         navigate('/todolist');

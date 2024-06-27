@@ -11,6 +11,7 @@ import ErrorPage from "./screens/ErrorPage";
 
 import { Auth } from "aws-amplify";
 import { error } from "ajv/dist/vocabularies/applicator/dependencies";
+import HelloWorld from "./screens/HelloWorld";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -37,6 +38,7 @@ function App() {
         />        <Route path="/error" element={<ErrorPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
+        <Route path="/helloworld" element={<HelloWorld />} />
         <Route path="/confirmsignup" element={<ConfirmSignUp />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/resetpassword" element={<ResetPassword />} />

@@ -59,5 +59,104 @@
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
     }
+  },
+  "function": {
+    "MyCustomfunc": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "mylambdafunction": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "mylambdafunction2": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "newFunction": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "awsnewamplify"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_MyCustomfunc_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MyCustomfunc"
+        }
+      ]
+    },
+    "AMPLIFY_function_MyCustomfunc_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MyCustomfunc"
+        }
+      ]
+    },
+    "AMPLIFY_function_mylambdafunction2_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mylambdafunction2"
+        }
+      ]
+    },
+    "AMPLIFY_function_mylambdafunction2_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mylambdafunction2"
+        }
+      ]
+    },
+    "AMPLIFY_function_mylambdafunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mylambdafunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_mylambdafunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mylambdafunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_newFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "newFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_newFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "newFunction"
+        }
+      ]
+    }
   }
 }

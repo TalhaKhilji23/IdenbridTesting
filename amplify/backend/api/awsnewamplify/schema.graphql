@@ -5,3 +5,32 @@ type Todo
   id: ID!
   name: String
 }
+
+
+
+type User 
+@model 
+@auth(rules: [{ allow: owner }])
+{
+  id: ID!
+  email: String
+}
+type Response {
+  id: ID!
+  name: String
+}
+type Response2 {
+  id: ID!
+  email: String
+}
+
+type Mutation {
+  changeNameOfTodo(id: ID!,
+  name: String): Response @function(name: "MyCustomfunc-${env}")
+  
+}
+type Query {
+  getNameofTodo(id: ID!,
+  name: String): Response2@function(name: "MyCustomfunc-${env}")
+  
+}

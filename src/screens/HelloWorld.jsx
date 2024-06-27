@@ -15,6 +15,7 @@ const HelloWorld = () => {
         //     ...graphqlOperation(getMessage),
         //     authMode:  "AMAZON_COGNITO_USER_POOLS"
         //   });
+        
         // setMessage(response.data.getMessage);
       } catch (error) {
         console.error('Error fetching message from Lambda:', error);

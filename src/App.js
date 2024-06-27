@@ -12,6 +12,7 @@ import ErrorPage from "./screens/ErrorPage";
 import { Auth } from "aws-amplify";
 import { error } from "ajv/dist/vocabularies/applicator/dependencies";
 import HelloWorld from "./screens/HelloWorld";
+import DraggableComp from "./screens/DraggableComp";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -42,6 +43,7 @@ function App() {
         <Route path="/confirmsignup" element={<ConfirmSignUp />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/resetpassword" element={<ResetPassword />} />
+        <Route path="/draggable" element={<DraggableComp />} />
         
         {/* Wildcard route to catch any other paths */}
         <Route path="*" element={<Navigate to="/error" replace />} />

@@ -117,7 +117,17 @@ function TodoList() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col md:flex-row">
+    {/* Left Section - Image */}
+    <div className="min-h-[600px] flex items-center justify-center flex-1">
+  <img
+    className="w-[600px] md:max-w-full h-[500px] md:h-auto px-4 md:px-1 rounded-lg"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmyiFqh8DW108LgqwbmPGlE_It8eufIUlK_w&s"
+    alt="Centered Image"
+  />
+</div>
+    {/* Right Section - Todo List */}
+    <div className="min-h-screen flex items-center justify-center flex-1">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded shadow-md">
         <h2 className="text-2xl font-bold text-center text-gray-800">Todo List</h2>
         <form className="space-y-4" onSubmit={handleAddItem}>
@@ -158,26 +168,30 @@ function TodoList() {
             </button>
           </div>
         </form>
-        <ul className="space-y-2">
-          {todos.map((todo, index) => (
-            <li key={index} className="flex items-center justify-between px-4 py-2 bg-gray-200 rounded">
-              <StorageImage className="w-32 h-20 rounded-md" imgKey={todo.img || 'UserAvatar.png'} />
-              <span>{todo.name}</span>
-              <div className="flex items-center space-x-2">
-                <BsWindowPlus
-                  onClick={() => handleEdit(index)}
-                  className="w-5 h-5 text-blue-500 mr-3 cursor-pointer hover:text-blue-700"
-                />
-                <BsTrash3
-                  onClick={() => handleDelete(index)}
-                  className="w-5 h-5 text-red-500 cursor-pointer hover:text-red-700"
-                />
-              </div>
-            </li>
-          ))}
-        </ul>
+        <div className="overflow-y-auto h-96">
+          <ul className="space-y-2">
+            {todos.map((todo, index) => (
+              <li key={index} className="flex items-center justify-between px-4 py-2 bg-gray-200 rounded">
+                <StorageImage className="w-32 h-20 rounded-md" imgKey={todo.img || 'UserAvatar.png'} />
+                <span>{todo.name}</span>
+                <div className="flex items-center space-x-2">
+                  <BsWindowPlus
+                    onClick={() => handleEdit(index)}
+                    className="w-5 h-5 text-blue-500 mr-3 cursor-pointer hover:text-blue-700"
+                  />
+                  <BsTrash3
+                    onClick={() => handleDelete(index)}
+                    className="w-5 h-5 text-red-500 cursor-pointer hover:text-red-700"
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
+  </div>
+  
   );
 }
 

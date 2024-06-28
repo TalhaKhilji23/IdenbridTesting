@@ -66,17 +66,6 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
-    "mylambdafunction": {
-      "build": true,
-      "dependsOn": [],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "mylambdafunction2": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
     "newFunction": {
       "build": true,
       "dependsOn": [
@@ -107,38 +96,6 @@
         {
           "category": "function",
           "resourceName": "MyCustomfunc"
-        }
-      ]
-    },
-    "AMPLIFY_function_mylambdafunction2_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "mylambdafunction2"
-        }
-      ]
-    },
-    "AMPLIFY_function_mylambdafunction2_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "mylambdafunction2"
-        }
-      ]
-    },
-    "AMPLIFY_function_mylambdafunction_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "mylambdafunction"
-        }
-      ]
-    },
-    "AMPLIFY_function_mylambdafunction_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "mylambdafunction"
         }
       ]
     },

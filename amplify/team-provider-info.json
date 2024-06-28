@@ -20,14 +20,6 @@
           "deploymentBucketName": "amplify-awsnewamplify-dev-3ba0b-deployment",
           "s3Key": "amplify-builds/MyCustomfunc-64782f6b49754c4e4a51-build.zip"
         },
-        "mylambdafunction": {
-          "deploymentBucketName": "amplify-awsnewamplify-dev-3ba0b-deployment",
-          "s3Key": "amplify-builds/mylambdafunction-4832792b424a76376f32-build.zip"
-        },
-        "mylambdafunction2": {
-          "deploymentBucketName": "amplify-awsnewamplify-dev-3ba0b-deployment",
-          "s3Key": "amplify-builds/mylambdafunction2-664c6844796b68684c68-build.zip"
-        },
         "newFunction": {
           "deploymentBucketName": "amplify-awsnewamplify-dev-3ba0b-deployment",
           "s3Key": "amplify-builds/newFunction-356b5958522f61506455-build.zip"

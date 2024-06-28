@@ -13,6 +13,8 @@ import { Auth } from "aws-amplify";
 import { error } from "ajv/dist/vocabularies/applicator/dependencies";
 import HelloWorld from "./screens/HelloWorld";
 import DraggableComp from "./screens/DraggableComp";
+import StickyNavbar from "./screens/StickyNavbar";
+import Footer from "./screens/Footer";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -35,9 +37,27 @@ function App() {
       <Routes>
       <Route
           path="/todolist"
-          element={isAuthenticated ? <TodoList /> : <Navigate to="/login" replace />}
-        />        <Route path="/error" element={<ErrorPage />} />
+          element={
+            <>
+              <StickyNavbar />
+
+              <TodoList />
+              <Footer />
+            </>
+          }
+        />
+      {/* <Route
+          path="/todolist"
+          element={isAuthenticated ? <>
+          <StickyNavbar />
+          <TodoList />
+          
+          
+          </> : <Navigate to="/login" replace />}
+        />         */}
+        <Route path="/error" element={<ErrorPage />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/navbar" element={<StickyNavbar />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/helloworld" element={<HelloWorld />} />
         <Route path="/confirmsignup" element={<ConfirmSignUp />} />

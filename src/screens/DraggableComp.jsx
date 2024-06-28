@@ -5,6 +5,9 @@ const initialContacts = [
   { id: '1', name: 'John Doe' },
   { id: '2', name: 'Jane Smith' },
   { id: '3', name: 'Alice Johnson' },
+  { id: '4', name: 'Alice 1' },
+  { id: '5', name: 'Alice 2' },
+  { id: '6', name: 'Alice 3' },
   // Add more contacts as needed
 ];
 

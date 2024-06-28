@@ -35,6 +35,9 @@
       },
       "api": {
         "awsnewamplify": {}
+      },
+      "storage": {
+        "myTodoProject": {}
       }
     }
   }

@@ -46,5 +46,11 @@ export type AmplifyDependentResourcesAttributes = {
       "Name": "string",
       "Region": "string"
     }
+  },
+  "storage": {
+    "myTodoProject": {
+      "BucketName": "string",
+      "Region": "string"
+    }
   }
 }

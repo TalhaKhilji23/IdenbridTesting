@@ -9,6 +9,7 @@ export const onCreateTodo = /* GraphQL */ `
     onCreateTodo(filter: $filter, owner: $owner) {
       id
       name
+      img
       createdAt
       updatedAt
       owner
@@ -24,6 +25,7 @@ export const onUpdateTodo = /* GraphQL */ `
     onUpdateTodo(filter: $filter, owner: $owner) {
       id
       name
+      img
       createdAt
       updatedAt
       owner
@@ -39,6 +41,7 @@ export const onDeleteTodo = /* GraphQL */ `
     onDeleteTodo(filter: $filter, owner: $owner) {
       id
       name
+      img
       createdAt
       updatedAt
       owner

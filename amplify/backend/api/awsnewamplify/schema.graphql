@@ -4,6 +4,7 @@ type Todo
 {
   id: ID!
   name: String
+  img : String
 }
 
 

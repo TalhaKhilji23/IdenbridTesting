@@ -158,5 +158,22 @@
         }
       ]
     }
+  },
+  "storage": {
+    "myTodoProject": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ],
+          "category": "function",
+          "resourceName": "MyCustomfunc"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
   }
 }

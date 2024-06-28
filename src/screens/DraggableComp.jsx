@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 const initialContacts = [
-  { id: '1', name: 'John Doe' },
-  { id: '2', name: 'Jane Smith' },
-  { id: '3', name: 'Alice Johnson' },
-  { id: '4', name: 'Alice 1' },
-  { id: '5', name: 'Alice 2' },
-  { id: '6', name: 'Alice 3' },
+  { id: '1', name: 'John Doe' , number :"03100674640"},
+  { id: '2', name: 'Jane Smith' ,number :"03136400456"},
+  { id: '3', name: 'Alice Johnson' ,number :"03014865240"},
+  { id: '4', name: 'Alice 1',number :"03090674640" },
+  { id: '5', name: 'Alice 2' ,number :"0569561255"},
+  { id: '6', name: 'Alice 3' ,number :"5165120355"},
   // Add more contacts as needed
 ];
 
@@ -42,7 +42,8 @@ const DraggableComp = () => {
   };
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
+   <div className='px-16 py-10   ml-10 ' >
+     <DragDropContext  onDragEnd={onDragEnd}>
       <Droppable droppableId="contacts">
         {(provided) => (
           <ul
@@ -53,7 +54,7 @@ const DraggableComp = () => {
             {contacts.map((contact, index) => (
               <Draggable key={contact.id} draggableId={contact.id} index={index}>
                 {(provided) => (
-                  <li
+                  <div
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
@@ -66,8 +67,9 @@ const DraggableComp = () => {
                       ...provided.draggableProps.style,
                     }}
                   >
-                    {contact.name}
-                  </li>
+                    <p >{contact.name}</p>
+                    <p>{contact.number}</p>
+                  </div>
                 )}
               </Draggable>
             ))}
@@ -76,6 +78,7 @@ const DraggableComp = () => {
         )}
       </Droppable>
     </DragDropContext>
+   </div>
   );
 };
 

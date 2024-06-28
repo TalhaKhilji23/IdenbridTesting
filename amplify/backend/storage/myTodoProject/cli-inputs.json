@@ -1,0 +1,16 @@
+{
+  "resourceName": "myTodoProject",
+  "policyUUID": "e89e6340",
+  "bucketName": "awsnewamplifybucket",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "MyCustomfunc",
+  "groupAccess": {}
+}

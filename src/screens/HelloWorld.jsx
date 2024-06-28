@@ -1,34 +1,38 @@
 // src/screens/HelloWorld.js
-import React, { useState, useEffect } from 'react';
-import { API, graphqlOperation } from 'aws-amplify';
-// import { getMessage } from '../graphql/queries';
-
+import React, { useState } from 'react';
+import { Storage } from 'aws-amplify';
+import { StorageImage } from '@aws-amplify/ui-react-storage';
 const HelloWorld = () => {
-  const [message, setMessage] = useState('');
+  const [file, setFile] = useState(null);
+  const [picKey, setPicKey] = useState(null);
 
-  useEffect(() => {
-    const fetchMessage = async () => {
-      try {
-        // const response = await API.graphql(graphqlOperation(getMessage));
+  const handleChange = (e) => {
+    const file = e.target.files[0];
+    setFile(file);
+  };
 
-        // const response = await API.graphql({
-        //     ...graphqlOperation(getMessage),
-        //     authMode:  "AMAZON_COGNITO_USER_POOLS"
-        //   });
-        
-        // setMessage(response.data.getMessage);
-      } catch (error) {
-        console.error('Error fetching message from Lambda:', error);
-      }
-    };
-
-    fetchMessage();
-  }, []);
+  const uploadImage = async () => {
+    if (!file) {
+      console.log("No file selected");
+      return;
+    }
+    try {
+      const result = await Storage.put(file.name, file, {
+        contentType: file.type, // Use the file's MIME type
+      });
+      console.log("File uploaded successfully",result.key);
+      setPicKey(result.key);
+    } catch (error) {
+      console.log("Error uploading file: ", error);
+    }
+  };
 
   return (
     <div>
-      <h1>Hello from Lambda</h1>
-      <p>{message}</p>
+      <h1>Upload File to S3</h1>
+      <StorageImage imgKey={picKey|| 'UserAvatar.png'} />
+      <input type="file" onChange={handleChange} />
+      <button type="button" onClick={uploadImage}>Submit</button>
     </div>
   );
 };

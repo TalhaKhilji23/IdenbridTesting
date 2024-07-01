@@ -36,7 +36,7 @@ function App() {
     <div>
       <Routes>
       <Route
-          path="/todolist"
+          path="/"
           element={
             <>
               <StickyNavbar />

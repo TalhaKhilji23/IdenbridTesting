@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 
 const Prac = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -153,13 +152,13 @@ const Prac = () => {
           />
         </div>
         <div className="flex-grow">
-          <img
-            src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg"
-            alt="Image 2"
-            className="w-full h-full object-cover"
-          />
+          <div
+            className="w-full h-full  bg-red-500"
+          >
+            <p>Value</p>
+          </div>
         </div>
-        <div className="flex-grow">
+        {/* <div className="flex-grow">
           <img
             src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg"
             alt="Image 3"
@@ -186,7 +185,7 @@ const Prac = () => {
             alt="Image 6"
             className="w-full h-full object-cover"
           />
-        </div>
+        </div> */}
       </main>
 
       {/* Footer */}

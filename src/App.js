@@ -15,6 +15,7 @@ import HelloWorld from "./screens/HelloWorld";
 import DraggableComp from "./screens/DraggableComp";
 import StickyNavbar from "./screens/StickyNavbar";
 import Footer from "./screens/Footer";
+import Prac from "./screens/Prac";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -56,6 +57,7 @@ function App() {
           </> : <Navigate to="/login" replace />}
         />         */}
         <Route path="/error" element={<ErrorPage />} />
+        <Route path="/prac" element={<Prac />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/navbar" element={<StickyNavbar />} />
         <Route path="/login" element={<LogIn />} />
